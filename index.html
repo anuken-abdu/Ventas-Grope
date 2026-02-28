@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Ventas Group — Премиальная аренда авто с водителем</title>
+  <meta name="description" content="Премиальная аренда автомобилей с водителем от Ventas Group. Комфорт, статус, пунктуальность. Бронирование в WhatsApp: +7 706 666 00 10." />
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Tag Manager (замените GTM-XXXXXXX на ваш контейнер) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+
+  <!-- Google Analytics 4 (если используете GA4 через GTM — этот блок можно не вставлять) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root{
+      --bg: #0A0A0A;
+      --bg-2: #121212;
+      --panel: rgba(255,255,255,0.04);
+      --panel-2: rgba(255,255,255,0.06);
+      --text: #FFFFFF;
+      --muted: rgba(255,255,255,0.72);
+      --muted-2: rgba(255,255,255,0.58);
+      --line: rgba(255,255,255,0.10);
+      --line-2: rgba(255,255,255,0.14);
+      --accent: #C7CCD6;
+      --accent-2: rgba(199,204,214,0.18);
+      --wa: #25D366;
+      --shadow: 0 12px 40px rgba(0,0,0,0.55);
+      --radius: 12px;
+      --radius-sm: 10px;
+      --container: 1120px;
+      --pad-x: 18px;
+      --topbar-h: 72px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 15% -10%, rgba(199,204,214,0.10), transparent 55%),
+                  radial-gradient(1000px 600px at 85% 10%, rgba(199,204,214,0.06), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, video{ max-width: 100%; display: block; }
+    a{ color: inherit; text-decoration: none; }
+    button{ font: inherit; }
+
+    .container{
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    .visually-hidden{
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .topbar{
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--topbar-h);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      background: rgba(10,10,10,0.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .topbar__inner{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .topbar__brand{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .topbar__logo{
+      width: 132px;
+      height: auto;
+    }
+    .topbar__actions{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .topbar__phone{
+      font-weight: 600;
+      font-size: 14px;
+      color: rgba(255,255,255,0.92);
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      white-space: nowrap;
+    }
+    .topbar__phone:hover{
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-1px);
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      padding: 12px 14px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+      outline: none;
+      will-change: transform;
+    }
+    .btn:active{ transform: scale(0.96); }
+    .btn:focus-visible{
+      box-shadow: 0 0 0 3px rgba(199,204,214,0.18);
+    }
+
+    .btn--primary{
+      background: linear-gradient(180deg, rgba(199,204,214,0.18), rgba(199,204,214,0.08));
+      border-color: rgba(199,204,214,0.28);
+      color: rgba(255,255,255,0.95);
+    }
+    .btn--primary:hover{
+      border-color: rgba(199,204,214,0.42);
+      background: linear-gradient(180deg, rgba(199,204,214,0.22), rgba(199,204,214,0.10));
+      transform: translateY(-1px);
+    }
+
+    .btn--wa{
+      background: rgba(37,211,102,0.10);
+      border-color: rgba(37,211,102,0.28);
+      color: rgba(255,255,255,0.95);
+    }
+    .btn--wa:hover{
+      background: rgba(37,211,102,0.14);
+      border-color: rgba(37,211,102,0.40);
+      transform: translateY(-1px);
+    }
+
+    .icon{
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: 0 0 auto;
+    }
+
+    .hero{
+      position: relative;
+      min-height: 100vh;
+      padding-top: calc(var(--topbar-h) + 38px);
+      padding-bottom: 64px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero__video{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity 700ms ease, transform 1200ms ease;
+      background: #000;
+    }
+    .hero.is-video-ready .hero__video{
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hero__overlay{
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(900px 560px at 35% 15%, rgba(0,0,0,0.35), rgba(0,0,0,0.72)),
+                  linear-gradient(180deg, rgba(10,10,10,0.62), rgba(10,10,10,0.88));
+      pointer-events: none;
+    }
+
+    .hero__inner{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 18px;
+      align-content: center;
+      padding: 28px 0;
+    }
+    .hero__kicker{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.86);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+    .hero__title{
+      margin: 0;
+      font-size: clamp(28px, 4.8vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.6px;
+      color: var(--text);
+    }
+    .hero__subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(15px, 2.2vw, 18px);
+      line-height: 1.55;
+      max-width: 58ch;
+    }
+    .hero__cta{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+      align-items: center;
+    }
+    .hero__meta{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      color: var(--muted-2);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .chip{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+    }
+
+    .section{
+      padding: 54px 0;
+    }
+
+    .section__head{
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .section__title{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+    }
+    .section__desc{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14.5px;
+      max-width: 70ch;
+    }
+
+    .catalog__grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .car-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      will-change: transform;
+    }
+    .car-card:hover{
+      transform: translateY(-2px);
+      border-color: var(--line-2);
+      box-shadow: var(--shadow);
+    }
+
+    .car-card__media{
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(0,0,0,0.18);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .car-card__media-main{
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+    .car-card__media-main:hover{
+      border-color: rgba(255,255,255,0.14);
+      transform: translateY(-1px);
+    }
+    .car-card__media-thumbrow{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .car-card__thumb{
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    .car-card__thumb:hover{
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-1px);
+    }
+
+    .media__img, .media__video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .car-card__badge{
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,10,0.55);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.92);
+      font-weight: 700;
+      font-size: 12.5px;
+      backdrop-filter: blur(10px);
+    }
+    .car-card__play{
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(10,10,10,0.55);
+      backdrop-filter: blur(10px);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .car-card__media-main:hover .car-card__play{
+      transform: scale(1.02);
+      border-color: rgba(255,255,255,0.20);
+      background: rgba(10,10,10,0.62);
+    }
+
+    .car-card__body{
+      padding: 16px 14px 14px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .car-card__titlewrap{
+      display: grid;
+      gap: 6px;
+    }
+    .car-card__title{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.2px;
+    }
+    .car-card__tagline{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .car-card__specs{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .spec{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: rgba(255,255,255,0.90);
+      font-size: 13.5px;
+    }
+    .spec__key{
+      color: var(--muted-2);
+      font-weight: 500;
+    }
+    .spec__val{
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .car-card__features{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .car-card__feature{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255,255,255,0.86);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+    .car-card__feature .icon{
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      opacity: 0.92;
+    }
+
+    .car-card__prices{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .price{
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      display: grid;
+      gap: 6px;
+      min-height: 64px;
+    }
+    .price__label{
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .price__value{
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.94);
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .car-card__actions{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .car-card__note{
+      color: var(--muted-2);
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+
+    .footer{
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.12);
+      padding: 28px 0 88px;
+    }
+    .footer__grid{
+      display: grid;
+      gap: 16px;
+    }
+    .footer__brand{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer__logo{
+      width: 132px;
+      height: auto;
+      opacity: 0.92;
+    }
+    .footer__links{
+      display: grid;
+      gap: 10px;
+    }
+    .footer__link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      width: fit-content;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .footer__link:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.05);
+    }
+    .footer__copy{
+      color: var(--muted-2);
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+
+    .fab{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(37,211,102,0.30);
+      background: rgba(37,211,102,0.14);
+      color: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      will-change: transform;
+    }
+    .fab:hover{
+      transform: translateY(-2px);
+      border-color: rgba(37,211,102,0.42);
+      background: rgba(37,211,102,0.18);
+    }
+    .fab:active{ transform: scale(0.96); }
+    .fab__text{
+      font-weight: 800;
+      font-size: 13.5px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .reveal{
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 520ms ease, transform 520ms ease;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal{
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 240ms ease;
+    }
+    .modal--open{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal__backdrop{
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+    }
+    .modal__dialog{
+      position: relative;
+      width: min(960px, calc(100vw - 28px));
+      max-height: calc(100vh - 28px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(18,18,18,0.92);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.70);
+      overflow: hidden;
+    }
+    .modal__top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 12px 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .modal__title{
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.2px;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .modal__close{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.92);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .modal__close:hover{
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+    .modal__close:active{ transform: scale(0.96); }
+    .modal__content{
+      padding: 12px;
+      max-height: calc(100vh - 120px);
+      overflow: auto;
+      touch-action: pan-x pan-y;
+    }
+    .modal__media{
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.25);
+    }
+    .modal__media img,
+    .modal__media video{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .modal__media video{
+      max-height: 70vh;
+      height: auto;
+    }
+
+    @media (min-width: 720px){
+      :root{ --pad-x: 20px; }
+      .catalog__grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .car-card__body{
+        padding: 16px;
+      }
+      .footer__grid{
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 1040px){
+      .catalog__grid{
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .reveal{ transition: none; transform: none; opacity: 1; }
+      .hero__video{ transition: none; opacity: 1; transform: none; }
+      .btn, .car-card, .topbar__phone, .footer__link, .fab, .modal{ transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="M12 2l2.6 6.7 7.2.4-5.5 4.5 1.8 7-6.1-3.9-6.1 3.9 1.8-7L2.2 9.1l7.2-.4L12 2z" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="M20 6L9 17l-5-5" />
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path d="M9 7l10 5-10 5V7z" />
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" />
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" />
+      <path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z" />
+      <path d="M17.5 6.5h.01" />
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 0 20" />
+      <path d="M12 2a15.3 15.3 0 0 0 0 20" />
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <path d="M20 21a8 8 0 1 0-16 0" />
+      <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z" />
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24">
+      <path d="M6 7h12l1 14H5L6 7z" />
+      <path d="M9 7a3 3 0 0 1 6 0" />
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path d="M18 6L6 18" />
+      <path d="M6 6l12 12" />
+    </symbol>
+  </svg>
+
+  <header class="topbar" aria-label="Шапка сайта">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="#top" aria-label="Ventas Group — на главную">
+        <img class="topbar__logo" src="images/logo.svg" alt="Ventas Group" />
+      </a>
+
+      <div class="topbar__actions">
+        <a class="topbar__phone" href="tel:+77066660010" aria-label="Позвонить +7 706 666 00 10">
+          +7 706 666 00 10
+        </a>
+        <a class="btn btn--wa" id="topbarWhatsApp" href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+          <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Главный экран">
+      <video
+        class="hero__video"
+        id="heroVideo"
+        src="images/hero-bg.mp4"
+        muted
+        autoplay
+        loop
+        playsinline
+        preload="metadata"
+      ></video>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__inner reveal">
+        <div class="hero__kicker">
+          <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+          Ventas Group · Премиальный сервис
+        </div>
+
+        <h1 class="hero__title">Премиальная аренда авто с водителем</h1>
+        <p class="hero__subtitle">
+          Статусные автомобили, аккуратная подача, уверенная логистика и комфорт в каждой детали.
+          Бронирование — в один клик.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" id="heroWhatsApp" href="#" target="_blank" rel="noopener" aria-label="Заказать через WhatsApp">
+            <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+            Связаться в WhatsApp
+          </a>
+          <a class="btn btn--primary" href="#catalog" aria-label="Перейти к каталогу">
+            Каталог авто
+          </a>
+        </div>
+
+        <div class="hero__meta" aria-label="Преимущества">
+          <div class="chip">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+            Пунктуальность и приватность
+          </div>
+          <div class="chip">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+            Чистый салон, ровная подача
+          </div>
+          <div class="chip">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+            Оплата и отчетность по запросу
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog" aria-label="Каталог автомобилей">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="section__title">Каталог автомобилей</h2>
+          <p class="section__desc">
+            Выберите модель, посмотрите фото/видео и ориентировочные тарифы. Для точного расчета маршрута и времени — напишите в WhatsApp.
+          </p>
+        </header>
+
+        <div class="catalog__grid" id="catalogGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts" aria-label="Подвал сайта">
+    <div class="container footer__grid">
+      <div class="reveal">
+        <div class="footer__brand" aria-label="Бренд">
+          <img class="footer__logo" src="images/logo.svg" alt="Ventas Group" />
+        </div>
+        <p class="footer__copy" style="margin:10px 0 0;">
+          © <span id="year"></span> Ventas Group. Все права защищены.
+        </p>
+      </div>
+
+      <div class="footer__links reveal" aria-label="Контакты">
+        <a class="footer__link" href="tel:+77066660010" aria-label="Позвонить +7 706 666 00 10">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          +7 706 666 00 10
+        </a>
+        <a class="footer__link" href="https://instagram.com/ventas.group" target="_blank" rel="noopener" aria-label="Instagram Ventas Group">
+          <svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg>
+          @ventas.group
+        </a>
+        <a class="footer__link" href="https://ventasgroup.kz" target="_blank" rel="noopener" aria-label="Сайт ventasgroup.kz">
+          <svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg>
+          ventasgroup.kz
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" id="fabWhatsApp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp — быстрый заказ">
+    <span class="fab__text">WhatsApp</span>
+    <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+  </a>
+
+  <div class="modal" id="mediaModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true" aria-hidden="true"></div>
+    <div class="modal__dialog" role="document" aria-label="Просмотр медиа">
+      <div class="modal__top">
+        <p class="modal__title" id="modalTitle">Просмотр</p>
+        <button class="modal__close" type="button" id="modalClose" aria-label="Закрыть">
+          <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+        </button>
+      </div>
+      <div class="modal__content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script type="application/json" id="catalogData">
+    [
+      {
+        "name": "Mercedes-Benz S-Class",
+        "tagline": "Максимальный комфорт и статус",
+        "specs": { "Пассажиры": "до 3", "Багаж": "2–3 чемодана", "Формат": "Business / VIP" },
+        "features": ["Плавный ход и тишина", "Климат-контроль", "Приватная подача"],
+        "prices": [{"label":"1 час","value":"35 000 ₸"},{"label":"3 часа","value":"95 000 ₸"},{"label":"1 день","value":"280 000 ₸"}],
+        "media": [
+          {"type":"video","src":"images/cars/s-class.mp4","poster":"images/cars/s-class.webp","alt":"Mercedes-Benz S-Class (видео)"},
+          {"type":"image","src":"images/cars/s-class-2.webp","alt":"Mercedes-Benz S-Class (фото)"},
+          {"type":"image","src":"images/cars/s-class-3.webp","alt":"Mercedes-Benz S-Class (интерьер)"}
+        ]
+      },
+      {
+        "name": "Mercedes-Benz E-Class",
+        "tagline": "Уверенный бизнес-класс для города и трассы",
+        "specs": { "Пассажиры": "до 3", "Багаж": "2 чемодана", "Формат": "Business" },
+        "features": ["Комфортная подвеска", "Сдержанный премиум", "Чистый салон"],
+        "prices": [{"label":"1 час","value":"25 000 ₸"},{"label":"3 часа","value":"70 000 ₸"},{"label":"1 день","value":"200 000 ₸"}],
+        "media": [
+          {"type":"image","src":"images/cars/e-class.webp","alt":"Mercedes-Benz E-Class"},
+          {"type":"image","src":"images/cars/e-class-2.webp","alt":"Mercedes-Benz E-Class (фото)"},
+          {"type":"video","src":"images/cars/e-class.mp4","poster":"images/cars/e-class.webp","alt":"Mercedes-Benz E-Class (видео)"}
+        ]
+      },
+      {
+        "name": "Mercedes-Benz V-Class",
+        "tagline": "Команда, семья, трансфер — без компромиссов",
+        "specs": { "Пассажиры": "до 6", "Багаж": "4–6 чемоданов", "Формат": "Premium Van" },
+        "features": ["Просторный салон", "Удобно для встреч и поездок", "Мягкая посадка"],
+        "prices": [{"label":"1 час","value":"30 000 ₸"},{"label":"3 часа","value":"85 000 ₸"},{"label":"1 день","value":"240 000 ₸"}],
+        "media": [
+          {"type":"image","src":"images/cars/v-class.webp","alt":"Mercedes-Benz V-Class"},
+          {"type":"image","src":"images/cars/v-class-2.webp","alt":"Mercedes-Benz V-Class (салон)"},
+          {"type":"video","src":"images/cars/v-class.mp4","poster":"images/cars/v-class.webp","alt":"Mercedes-Benz V-Class (видео)"}
+        ]
+      },
+      {
+        "name": "Lexus LX",
+        "tagline": "Премиальный внедорожник для любых задач",
+        "specs": { "Пассажиры": "до 4", "Багаж": "3–4 чемодана", "Формат": "Premium SUV" },
+        "features": ["Высокая посадка", "Уверенно на трассе", "Имидж и безопасность"],
+        "prices": [{"label":"1 час","value":"30 000 ₸"},{"label":"3 часа","value":"85 000 ₸"},{"label":"1 день","value":"240 000 ₸"}],
+        "media": [
+          {"type":"image","src":"images/cars/lx.webp","alt":"Lexus LX"},
+          {"type":"image","src":"images/cars/lx-2.webp","alt":"Lexus LX (фото)"},
+          {"type":"video","src":"images/cars/lx.mp4","poster":"images/cars/lx.webp","alt":"Lexus LX (видео)"}
+        ]
+      },
+      {
+        "name": "Toyota Camry",
+        "tagline": "Классика комфорта для ежедневных поездок",
+        "specs": { "Пассажиры": "до 3", "Багаж": "2 чемодана", "Формат": "Comfort" },
+        "features": ["Надежно и спокойно", "Комфортный салон", "Оптимально по времени/цене"],
+        "prices": [{"label":"1 час","value":"18 000 ₸"},{"label":"3 часа","value":"50 000 ₸"},{"label":"1 день","value":"150 000 ₸"}],
+        "media": [
+          {"type":"image","src":"images/cars/camry.webp","alt":"Toyota Camry"},
+          {"type":"image","src":"images/cars/camry-2.webp","alt":"Toyota Camry (фото)"},
+          {"type":"video","src":"images/cars/camry.mp4","poster":"images/cars/camry.webp","alt":"Toyota Camry (видео)"}
+        ]
+      }
+    ]
+  </script>
+
+  <script>
+    (function () {
+      const WHATSAPP_NUMBER = "77066660010";
+
+      const $ = (sel, root = document) => root.querySelector(sel);
+
+      function encodeText(text) {
+        return encodeURIComponent(text).replace(/%20/g, "+");
+      }
+
+      function waLink(message) {
+        return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeText(message);
+      }
+
+      function setWhatsAppLinks() {
+        const common = "Здравствуйте! Нужна аренда авто с водителем (Ventas Group).";
+        const hero = $("#heroWhatsApp");
+        const topbar = $("#topbarWhatsApp");
+        const fab = $("#fabWhatsApp");
+
+        if (hero) hero.href = waLink(common);
+        if (topbar) topbar.href = waLink(common);
+        if (fab) fab.href = waLink(common);
+      }
+
+      function heroVideoReady() {
+        const hero = document.querySelector(".hero");
+        const video = $("#heroVideo");
+        if (!hero || !video) return;
+
+        const markReady = () => hero.classList.add("is-video-ready");
+
+        if (video.readyState >= 2) {
+          markReady();
+          return;
+        }
+
+        video.addEventListener("canplay", markReady, { once: true });
+        video.addEventListener("loadeddata", markReady, { once: true });
+        video.addEventListener("error", function () {
+          hero.classList.add("is-video-ready");
+        }, { once: true });
+      }
+
+      function el(tag, attrs = {}, children = []) {
+        const node = document.createElement(tag);
+        Object.entries(attrs).forEach(([k, v]) => {
+          if (k === "class") node.className = v;
+          else if (k === "text") node.textContent = v;
+          else if (k.startsWith("data-")) node.setAttribute(k, v);
+          else if (k === "html") node.innerHTML = v;
+          else node.setAttribute(k, v);
+        });
+        children.forEach((c) => node.appendChild(c));
+        return node;
+      }
+
+      function svgUse(symbolId, className) {
+        const svg = el("svg", { class: className || "icon", "aria-hidden": "true" });
+        const use = el("use", { href: symbolId });
+        svg.appendChild(use);
+        return svg;
+      }
+
+      function readCatalog() {
+        const raw = $("#catalogData");
+        if (!raw) return [];
+        try {
+          const data = JSON.parse(raw.textContent.trim());
+          return Array.isArray(data) ? data : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function buildMediaTile(mediaItem, title, isMain) {
+        const tileClass = isMain ? "car-card__media-main" : "car-card__thumb";
+        const tile = el("div", {
+          class: tileClass,
+          role: "button",
+          tabindex: "0",
+          "aria-label": "Открыть медиа: " + title
+        });
+
+        if (mediaItem.type === "video") {
+          const video = el("video", {
+            class: "media__video",
+            src: mediaItem.src,
+            muted: "",
+            playsinline: "",
+            preload: "metadata",
+            poster: mediaItem.poster || ""
+          });
+          tile.appendChild(video);
+
+          const play = el("div", { class: "car-card__play", "aria-hidden": "true" });
+          play.appendChild(svgUse("#i-play", "icon"));
+          tile.appendChild(play);
+        } else {
+          const img = el("img", {
+            class: "media__img",
+            src: mediaItem.src,
+            alt: mediaItem.alt || title,
+            loading: "lazy"
+          });
+          tile.appendChild(img);
+        }
+
+        tile.dataset.mediaType = mediaItem.type;
+        tile.dataset.mediaSrc = mediaItem.src;
+        tile.dataset.mediaPoster = mediaItem.poster || "";
+        tile.dataset.mediaAlt = mediaItem.alt || title;
+
+        return tile;
+      }
+
+      function buildCard(car, index) {
+        const card = el("article", { class: "car-card reveal" });
+        card.style.transitionDelay = Math.min(200, 80 + index * 60) + "ms";
+
+        const mediaWrap = el("div", { class: "car-card__media" });
+        const media = Array.isArray(car.media) ? car.media : [];
+        const main = media[0] || { type: "image", src: "images/placeholder.webp", alt: car.name || "Автомобиль" };
+
+        const mainTile = buildMediaTile(main, car.name || "Автомобиль", true);
+
+        const badge = el("div", { class: "car-card__badge" }, [
+          svgUse("#i-star", "icon"),
+          el("span", { text: "Premium" })
+        ]);
+        mainTile.appendChild(badge);
+
+        mediaWrap.appendChild(mainTile);
+
+        const thumbs = media.slice(1, 4);
+        if (thumbs.length) {
+          const row = el("div", { class: "car-card__media-thumbrow" });
+          thumbs.forEach((m) => row.appendChild(buildMediaTile(m, car.name || "Автомобиль", false)));
+          while (row.children.length < 3) {
+            row.appendChild(el("div", { class: "car-card__thumb", "aria-hidden": "true" }));
+          }
+          mediaWrap.appendChild(row);
+        }
+
+        const body = el("div", { class: "car-card__body" });
+
+        const titleWrap = el("div", { class: "car-card__titlewrap" }, [
+          el("h3", { class: "car-card__title", text: car.name || "Модель" }),
+          el("p", { class: "car-card__tagline", text: car.tagline || "" })
+        ]);
+
+        const specs = el("div", { class: "car-card__specs", "aria-label": "Характеристики" });
+        const specObj = car.specs && typeof car.specs === "object" ? car.specs : {};
+        Object.entries(specObj).forEach(([k, v]) => {
+          const row = el("div", { class: "spec" }, [
+            el("span", { class: "spec__key", text: k }),
+            el("span", { class: "spec__val", text: String(v) })
+          ]);
+          specs.appendChild(row);
+        });
+
+        const features = el("ul", { class: "car-card__features", "aria-label": "Особенности" });
+        const featArr = Array.isArray(car.features) ? car.features : [];
+        featArr.slice(0, 4).forEach((t) => {
+          const li = el("li", { class: "car-card__feature" }, [
+            svgUse("#i-check", "icon"),
+            el("span", { text: t })
+          ]);
+          features.appendChild(li);
+        });
+
+        const prices = el("div", { class: "car-card__prices", "aria-label": "Тарифы" });
+        const priceArr = Array.isArray(car.prices) ? car.prices : [];
+        priceArr.slice(0, 3).forEach((p) => {
+          const box = el("div", { class: "price" }, [
+            el("div", { class: "price__label", text: p.label || "" }),
+            el("div", { class: "price__value", text: p.value || "" })
+          ]);
+          prices.appendChild(box);
+        });
+        while (prices.children.length < 3) {
+          prices.appendChild(el("div", { class: "price", "aria-hidden": "true" }));
+        }
+
+        const actions = el("div", { class: "car-card__actions" });
+
+        const msg = "Здравствуйте! Интересует " + (car.name || "автомобиль") + " с водителем (Ventas Group).";
+        const orderBtn = el("a", {
+          class: "btn btn--wa",
+          href: waLink(msg),
+          target: "_blank",
+          rel: "noopener",
+          "aria-label": "Заказать " + (car.name || "автомобиль") + " в WhatsApp"
+        }, [
+          svgUse("#i-play", "icon"),
+          el("span", { text: "Заказать" })
+        ]);
+
+        const note = el("div", { class: "car-card__note", text: "Окончательная стоимость зависит от маршрута и времени." });
+
+        actions.appendChild(orderBtn);
+        actions.appendChild(note);
+
+        body.appendChild(titleWrap);
+        if (Object.keys(specObj).length) body.appendChild(specs);
+        if (featArr.length) body.appendChild(features);
+        body.appendChild(prices);
+        body.appendChild(actions);
+
+        card.appendChild(mediaWrap);
+        card.appendChild(body);
+
+        return card;
+      }
+
+      function renderCatalog() {
+        const grid = $("#catalogGrid");
+        if (!grid) return;
+
+        const data = readCatalog();
+        grid.innerHTML = "";
+
+        data.forEach((car, idx) => {
+          grid.appendChild(buildCard(car, idx));
+        });
+      }
+
+      function setupReveal() {
+        const items = Array.from(document.querySelectorAll(".reveal"));
+        if (!("IntersectionObserver" in window) || items.length === 0) {
+          items.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              io.unobserve(e.target);
+            }
+          });
+        }, { root: null, threshold: 0.12 });
+
+        items.forEach((el) => io.observe(el));
+      }
+
+      function setupModal() {
+        const modal = $("#mediaModal");
+        const modalContent = $("#modalContent");
+        const modalTitle = $("#modalTitle");
+        const closeBtn = $("#modalClose");
+
+        if (!modal || !modalContent || !modalTitle || !closeBtn) return;
+
+        let lastFocus = null;
+
+        function openModal(payload) {
+          lastFocus = document.activeElement;
+
+          modalTitle.textContent = payload.title || "Просмотр";
+          modalContent.innerHTML = "";
+
+          const wrap = el("div", { class: "modal__media" });
+
+          if (payload.type === "video") {
+            const v = el("video", {
+              src: payload.src,
+              controls: "",
+              autoplay: "",
+              playsinline: "",
+              preload: "metadata",
+              poster: payload.poster || ""
+            });
+            wrap.appendChild(v);
+          } else {
+            const img = el("img", {
+              src: payload.src,
+              alt: payload.alt || payload.title || "Фото"
+            });
+            wrap.appendChild(img);
+          }
+
+          modalContent.appendChild(wrap);
+
+          modal.classList.add("modal--open");
+          modal.setAttribute("aria-hidden", "false");
+          closeBtn.focus();
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+          modal.classList.remove("modal--open");
+          modal.setAttribute("aria-hidden", "true");
+          modalContent.innerHTML = "";
+          document.body.style.overflow = "";
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+        }
+
+        closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function (e) {
+          const t = e.target;
+          if (t && t.getAttribute && t.getAttribute("data-close") === "true") closeModal();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("modal--open")) {
+            closeModal();
+          }
+        });
+
+        document.addEventListener("click", function (e) {
+          const t = e.target;
+          if (!t) return;
+
+          const tile = t.closest ? t.closest("[data-media-src]") : null;
+          if (!tile) return;
+
+          const payload = {
+            type: tile.dataset.mediaType || "image",
+            src: tile.dataset.mediaSrc || "",
+            poster: tile.dataset.mediaPoster || "",
+            alt: tile.dataset.mediaAlt || "",
+            title: tile.getAttribute("aria-label") || "Просмотр"
+          };
+
+          if (payload.src) openModal(payload);
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          const t = e.target;
+          if (!t || !t.matches || !t.matches("[data-media-src]")) return;
+          e.preventDefault();
+          const payload = {
+            type: t.dataset.mediaType || "image",
+            src: t.dataset.mediaSrc || "",
+            poster: t.dataset.mediaPoster || "",
+            alt: t.dataset.mediaAlt || "",
+            title: t.getAttribute("aria-label") || "Просмотр"
+          };
+          if (payload.src) openModal(payload);
+        });
+      }
+
+      function setYear() {
+        const y = $("#year");
+        if (y) y.textContent = String(new Date().getFullYear());
+      }
+
+      function init() {
+        setYear();
+        setWhatsAppLinks();
+        heroVideoReady();
+        renderCatalog();
+        setupReveal();
+        setupModal();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>
