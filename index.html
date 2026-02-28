@@ -17,15 +17,16 @@
         <img src="images/logo.png" alt="Ventas Group" class="logo-img" />
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#hero">Главная</a></li>
-        <li><a href="#catalog">Автомобили</a></li>
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#catalog" data-i18n="nav_home">Главная</a></li>
+        <li><a href="#catalog" data-i18n="nav_cars">Автомобили</a></li>
+        <li><a href="#about" data-i18n="nav_about">О нас</a></li>
+        
       </ul>
       <div class="nav-actions">
         <a href="https://www.instagram.com/" target="_blank" class="btn-icon btn-instagram" title="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
+        <button class="btn-lang" id="langToggle" aria-label="Сменить язык">RU</button>
         <a href="tel:+79991234567" class="btn-icon btn-call" title="Позвонить">
           <i class="fas fa-phone"></i>
         </a>
@@ -41,69 +42,44 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
     <ul>
-      <li><a href="#hero" class="mobile-link">Главная</a></li>
-      <li><a href="#catalog" class="mobile-link">Автомобили</a></li>
-      <li><a href="#about" class="mobile-link">О нас</a></li>
-      <li><a href="#contact" class="mobile-link">Контакты</a></li>
+      <li><a href="#catalog" class="mobile-link" data-i18n="nav_home">Главная</a></li>
+      <li><a href="#catalog" class="mobile-link" data-i18n="nav_cars">Автомобили</a></li>
+      <li><a href="#about" class="mobile-link" data-i18n="nav_about">О нас</a></li>
+      
     </ul>
     <div class="mobile-actions">
       <a href="https://www.instagram.com/" target="_blank" class="mobile-social">
         <i class="fab fa-instagram"></i> Instagram
       </a>
       <a href="tel:+79991234567" class="mobile-social">
-        <i class="fas fa-phone"></i> Позвонить
+        <i class="fas fa-phone"></i> <span data-i18n="call">Позвонить</span>
       </a>
+      <div class="mobile-lang" id="mobileLang">RU · KZ · EN</div>
     </div>
   </div>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <img src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/fbc3048c-06b5-4272-bf10-88558836c1a9.png" alt="Hero Car" class="hero-bg-img" />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-subtitle">ПРЕМИУМ АРЕНДА АВТОМОБИЛЕЙ</p>
-      <h1 class="hero-title">Ventas Group</h1>
-      <p class="hero-desc">Роскошь и комфорт на каждый день. Лучшие автомобили бизнес-класса для вас.</p>
-      <div class="hero-btns">
-        <a href="#catalog" class="btn-primary">Смотреть автомобили</a>
-        <a href="tel:+79991234567" class="btn-outline"><i class="fas fa-phone"></i> Позвонить</a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span></span>
-    </div>
-  </section>
 
   <!-- CATALOG -->
   <section class="catalog" id="catalog">
     <div class="container">
       <div class="section-header">
         <p class="section-label">НАШ АВТОПАРК</p>
-        <h2 class="section-title">Выберите автомобиль</h2>
-        <p class="section-desc">10 моделей премиум-класса для любых задач</p>
+        <h2 class="section-title" data-i18n="catalog_title">Премиум автомобили на любой вкус</h2>
+        <p class="section-desc" data-i18n="catalog_desc">10 моделей премиум-класса для любых задач</p>
       </div>
 
-      <!-- CAR TABS -->
-      <div class="car-tabs" id="carTabs">
-        <button class="car-tab active" data-car="0">Mercedes S-Class W223</button>
-        <button class="car-tab" data-car="1">Mercedes S-Class W222</button>
-        <button class="car-tab" data-car="2">Mercedes V-Class</button>
-        <button class="car-tab" data-car="3">Mercedes Sprinter</button>
-        <button class="car-tab" data-car="4">Lexus LX 600</button>
-        <button class="car-tab" data-car="5">Lexus LX 570</button>
-        <button class="car-tab" data-car="6">LC 300</button>
-        <button class="car-tab" data-car="7">LC 200</button>
-        <button class="car-tab" data-car="8">Camry 80</button>
-        <button class="car-tab" data-car="9">Camry 70</button>
+      <!-- BRAND + MODEL TABS -->
+      <div class="brand-tabs" id="brandTabs">
+        <button class="brand-tab active" data-brand="mercedes">Mercedes</button>
+        <button class="brand-tab" data-brand="lexus">Lexus</button>
+        <button class="brand-tab" data-brand="toyota">Toyota</button>
       </div>
+      <div class="car-tabs" id="carTabs"></div>
 
       <!-- CAR PANELS -->
       <div class="car-panels" id="carPanels">
 
         <!-- CAR 0: Mercedes S-Class W223 -->
-        <div class="car-panel active" data-car="0">
+        <div class="car-panel active" data-car="0" data-brand="mercedes">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-0" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/fbc3048c-06b5-4272-bf10-88558836c1a9.png" alt="Mercedes S-Class W223" />
@@ -136,7 +112,7 @@
         </div>
 
         <!-- CAR 1: Mercedes S-Class W222 -->
-        <div class="car-panel" data-car="1">
+        <div class="car-panel" data-car="1" data-brand="mercedes">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-1" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/af5ce1f1-5e74-4ce1-83d4-46c3edc7d600.png" alt="Mercedes S-Class W222" />
@@ -169,7 +145,7 @@
         </div>
 
         <!-- CAR 2: Mercedes V-Class -->
-        <div class="car-panel" data-car="2">
+        <div class="car-panel" data-car="2" data-brand="mercedes">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-2" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/078c7991-f19e-4467-bc2b-8a7d90edcb1a.png" alt="Mercedes V-Class" />
@@ -202,7 +178,7 @@
         </div>
 
         <!-- CAR 3: Mercedes Sprinter -->
-        <div class="car-panel" data-car="3">
+        <div class="car-panel" data-car="3" data-brand="mercedes">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-3" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/c2cf920c-fed6-45e3-8cf9-a12b78cfefbc.png" alt="Mercedes Sprinter" />
@@ -235,7 +211,7 @@
         </div>
 
         <!-- CAR 4: Lexus LX 600 -->
-        <div class="car-panel" data-car="4">
+        <div class="car-panel" data-car="4" data-brand="lexus">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-4" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/cda428e1-6782-4f90-be0a-5242c21714be.png" alt="Lexus LX 600" />
@@ -268,7 +244,7 @@
         </div>
 
         <!-- CAR 5: Lexus LX 570 -->
-        <div class="car-panel" data-car="5">
+        <div class="car-panel" data-car="5" data-brand="lexus">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-5" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/f8af36fc-c192-497b-a37e-3105a5e0d59b.png" alt="Lexus LX 570" />
@@ -301,7 +277,7 @@
         </div>
 
         <!-- CAR 6: Land Cruiser 300 -->
-        <div class="car-panel" data-car="6">
+        <div class="car-panel" data-car="6" data-brand="toyota">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-6" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/3b0cdb4f-6baf-4330-80d6-a447f96c3e7d.png" alt="Land Cruiser 300" />
@@ -334,7 +310,7 @@
         </div>
 
         <!-- CAR 7: Land Cruiser 200 -->
-        <div class="car-panel" data-car="7">
+        <div class="car-panel" data-car="7" data-brand="toyota">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-7" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/5c1e4f2c-3eb0-47a2-84d1-150dc95944a5.png" alt="Land Cruiser 200" />
@@ -367,7 +343,7 @@
         </div>
 
         <!-- CAR 8: Camry 80 -->
-        <div class="car-panel" data-car="8">
+        <div class="car-panel" data-car="8" data-brand="toyota">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-8" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/83cc34df-3e19-4363-89b2-fec5c5f8a110.png" alt="Toyota Camry 80" />
@@ -400,7 +376,7 @@
         </div>
 
         <!-- CAR 9: Camry 70 -->
-        <div class="car-panel" data-car="9">
+        <div class="car-panel" data-car="9" data-brand="toyota">
           <div class="car-gallery">
             <div class="gallery-main">
               <img id="main-img-9" src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/285a1e2a-3856-421a-a6d2-b4bb00039603.png" alt="Toyota Camry 70" />
@@ -445,47 +421,15 @@
           <h2 class="section-title">Ventas Group</h2>
           <p>Мы предоставляем услуги аренды премиум-автомобилей для деловых поездок, трансферов и особых мероприятий. Наш автопарк включает лучшие модели Mercedes-Benz, Lexus и Toyota.</p>
           <p>Каждый автомобиль регулярно обслуживается и оснащён всем необходимым для комфортной поездки. Профессиональные водители с опытом работы.</p>
-          <div class="about-stats">
-            <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Автомобилей</span></div>
-            <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Клиентов</span></div>
-            <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Рейтинг</span></div>
+          <div class="about-stats about-brands">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes" class="brand-logo" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lexus_wordmark.svg/320px-Lexus_wordmark.svg.png" alt="Lexus" class="brand-logo" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Toyota_carlogo.svg" alt="Toyota" class="brand-logo" />
           </div>
         </div>
         <div class="about-img">
           <img src="https://mgx-backend-cdn.metadl.com/generate/images/808086/2026-02-28/7fac374d-d5a7-42a8-8b99-d371f0f0c268.png" alt="Ventas Group Fleet" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">СВЯЗАТЬСЯ С НАМИ</p>
-        <h2 class="section-title">Забронировать автомобиль</h2>
-      </div>
-      <div class="contact-grid">
-        <a href="tel:+79991234567" class="contact-card">
-          <i class="fas fa-phone"></i>
-          <h4>Позвонить</h4>
-          <p>+7 (999) 123-45-67</p>
-        </a>
-        <a href="https://www.instagram.com/" target="_blank" class="contact-card">
-          <i class="fab fa-instagram"></i>
-          <h4>Instagram</h4>
-          <p>@ventas_group</p>
-        </a>
-        <a href="https://wa.me/79991234567" target="_blank" class="contact-card">
-          <i class="fab fa-whatsapp"></i>
-          <h4>WhatsApp</h4>
-          <p>Написать нам</p>
-        </a>
-        <a href="https://t.me/ventas_group" target="_blank" class="contact-card">
-          <i class="fab fa-telegram"></i>
-          <h4>Telegram</h4>
-          <p>@ventas_group</p>
-        </a>
       </div>
     </div>
   </section>
@@ -496,13 +440,13 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="images/logo.png" alt="Ventas Group" class="footer-logo" />
-          <p>Премиум аренда автомобилей</p>
+          
         </div>
         <div class="footer-links">
-          <a href="#hero">Главная</a>
-          <a href="#catalog">Автомобили</a>
-          <a href="#about">О нас</a>
-          <a href="#contact">Контакты</a>
+          <a href="#catalog" data-i18n="nav_home">Главная</a>
+          <a href="#catalog" data-i18n="nav_cars">Автомобили</a>
+          <a href="#about" data-i18n="nav_about">О нас</a>
+          
         </div>
         <div class="footer-social">
           <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -525,6 +469,15 @@
     <a href="tel:+79991234567" class="float-btn float-call" title="Позвонить">
       <i class="fas fa-phone"></i>
     </a>
+  </div>
+
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <button class="lightbox-nav prev" id="lightboxPrev">❮</button>
+    <img id="lightboxImg" src="" alt="" />
+    <button class="lightbox-nav next" id="lightboxNext">❯</button>
+    <button class="lightbox-zoom" id="lightboxZoom"><i class="fas fa-search-plus"></i></button>
   </div>
 
   <script src="script.js"></script>
